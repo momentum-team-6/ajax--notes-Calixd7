@@ -4,9 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Notes</title>
+  <script src = script.js defer ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <title>notes</title>
 </head>
 <body>
-  
-</body>
-</html>
+  <header>
+    <h1> Notes</h1>
+  </header>
+      <form id="note-form" class="form">
+        <div class="inputfield">
+          <label for="notesinput"></label>
+          <textarea id="notesinput" name="notes"
+           placeholder="Add notes here"></textarea>
+        </div>
+      <div class="inputfield">
+        <button type="submit" class="button-lg">Make a new note</button>
+      </div>
+    </form>
+    <section class="noteslist">
+      <ul id="noteslist"></ul>
+    </section>
+  </body>
+  </html>
