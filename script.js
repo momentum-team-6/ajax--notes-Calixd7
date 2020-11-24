@@ -4,7 +4,6 @@ const notesList = document.querySelector('#noteslist')
 document.addEventListener('submit', function (event) {
     event.preventDefault()
     createnotes()
-    rendernotes()
 })
 
 notesList.addEventListener('click', function (event) {
@@ -45,9 +44,17 @@ function rendernotesItem(note) {
     const notesItemEl = document.createElement('li')
     notesItemEl.dataset.id = note.id
     notesItemEl.id = `note${note.id}`
-    notesItemEl.innerHTML = note.notesItem
+    notesItemEl.innerHTML = note.noteItem
     notesList.appendChild(notesItemEl)
+
+    let deleteButton = document.createElement('button')
+    deleteButton.classList.add('delete')
+    deleteButton.innerText = 'Delete'
+    notesItemEl.appendChild(deleteButton)
 }
+
+
+
 
 /*function editnotes(noteId) {
     fetch (url + '/' + noteId, {
@@ -70,10 +77,9 @@ function deletenotes (noteId) {
     })
         .then(res => res.json())
         .then(data => {
-            const notesToRemove = document.querySelector(`#note${noteId}`)
+            const noteToRemove = document.querySelector(`#note${noteId}`)
             noteToRemove.remove()
         })
 }
 
 rendernotes()
-
